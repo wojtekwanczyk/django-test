@@ -7,20 +7,18 @@
 <body>
 
 <div>
-    <h2>Wojtek's blog</h2>
+    <h1><a href="/">Wojtek's blog</a></h1>
 </div>
 
-<div>
-    <p>published: today</p>
-    <h3><a href="/">My first post</a></h3>
-    <p>blalf dskfndk gfnsld gnlfsdg lfdsg ;fdsvgf;g</p>
-</div>
 
-<div>
-    <p>published: yesterday</p>
-    <h4><a href=""> My second post</a></h4>
-    <p> jdafnjsdn flskdgn lr;sgnlsfgnn lkfn lkfns dlkgfns </p>
-</div>
+{%  for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
 
 </body>
 </html>
